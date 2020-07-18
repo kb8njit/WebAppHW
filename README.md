@@ -8,3 +8,6 @@ This project is a homework assignment intended to teach how to setup PyCharm wit
 
 ### Postman
 ![Postman](screenshots/Postman.png)
+
+### Bootstrap
+![Bootstrap](screenshots/Bootstrap.png)
