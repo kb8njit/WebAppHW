@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$/../WebAppHW">
       <excludeFolder url="file://$MODULE_DIR$/../WebAppHW/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.8.3 Docker Compose (app at [/Users/kellyblackledge/PycharmProjects/WebAppHW/docker-compose.yml])" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
