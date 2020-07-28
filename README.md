@@ -7,12 +7,12 @@ This project is a homework assignment intended to teach how to setup PyCharm wit
  3. Convert the CSV to an SQL insert to use as your Database Data
  4. Submit a link to your GitHub repository showing your new project data.  
  5. Include screenshots of the following items:
-     * [The project showing you can view your data tables in PyCharm]()
-     * [Your project running correctly in the browser and displaying your homepage with data](screenshots/Assignment 3/)
-     * [Your project running correctly in the browser and displaying your data record as a view of one record]()
-     * [Your project running correctly in the browser and displaying a new record added to your homepage]()
-     * [Your project running correctly in the browser and displaying an updated record added to your homepage]()
-     * [Your project running correctly in the browser and displaying a deleted record that had been added to your homepage]()
+     * [The project showing you can view your data tables in PyCharm](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_PyCharm%20Table%20View.png)
+     * [Your project running correctly in the browser and displaying your homepage with data](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_Homepage%20List.png)
+     * [Your project running correctly in the browser and displaying your data record as a view of one record](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_Single%20Entry%20View.png)
+     * [Your project running correctly in the browser and displaying a new record added to your homepage](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_New%20Entry%20Confirmation.png)
+     * [Your project running correctly in the browser and displaying an updated record added to your homepage](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_Confirm%20Edit.png)
+     * [Your project running correctly in the browser and displaying a deleted record that had been added to your homepage](https://github.com/kb8njit/WebAppHW/blob/Assignment3/screenshots/Assignment%203/OscarData_Confirm%20Delete.png)
 
 ## Screenshots
 
