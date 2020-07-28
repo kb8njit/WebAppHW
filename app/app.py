@@ -99,7 +99,7 @@ def api_edit(oscar_id) -> str:
     content = request.json
     inputData = (content['Movie_Title'], content['Year'], content['Name'],
                  content['Age'], content['Gender'], oscar_id)
-    sql_update_query = """UPDATE OscarWinners t SET t.Year = %s, t.Movie_Title = %s, t.Name = %s, t.Age = 
+    sql_update_query = """UPDATE OscarWinners t SET t.Movie_Title = %s, t.Year = %s, t.Name = %s, t.Age = 
         %s, t.Gender = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
@@ -122,13 +122,13 @@ def api_add() -> str:
     return resp
 
 
-@app.route('/api/oscars/<int:oscar_id>', methods=['DELETE'])
+@app.route('/api/v1/oscars/<int:oscar_id>', methods=['DELETE'])
 def api_delete(oscar_id) -> str:
     cursor = mysql.get_db().cursor()
     sql_delete_query = """DELETE FROM OscarWinners WHERE id = %s """
     cursor.execute(sql_delete_query, oscar_id)
     mysql.get_db().commit()
-    resp = Response(status=210, mimetype='application/json')
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 if __name__ == '__main__':
