@@ -83,7 +83,7 @@ def api_browse() -> str:
     return resp
 
 
-@app.route('/api/v1/oscars/<int:osar_id>', methods=['GET'])
+@app.route('/api/v1/oscars/<int:oscar_id>', methods=['GET'])
 def api_retrieve(oscar_id) -> str:
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM OscarWinners WHERE id=%s', oscar_id)
@@ -93,20 +93,41 @@ def api_retrieve(oscar_id) -> str:
     return resp
 
 
-@app.route('/api/v1/oscars/', methods=['POST'])
-def api_add() -> str:
-    resp = Response(status=201, mimetype='application/json')
+@app.route('/api/v1/oscars/<int:oscar_id>', methods=['PUT'])
+def api_edit(oscar_id) -> str:
+    cursor = mysql.get_db().cursor()
+    content = request.json
+    inputData = (content['Movie_Title'], content['Year'], content['Name'],
+                 content['Age'], content['Gender'], oscar_id)
+    sql_update_query = """UPDATE OscarWinners t SET t.Year = %s, t.Movie_Title = %s, t.Name = %s, t.Age = 
+        %s, t.Gender = %s WHERE t.id = %s """
+    cursor.execute(sql_update_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 
-@app.route('/api/v1/oscars/<int:oscar_id>', methods=['PUT'])
-def api_edit(oscar_id) -> str:
+@app.route('/api/v1/oscars', methods=['POST'])
+def api_add() -> str:
+
+    content = request.json
+
+    cursor = mysql.get_db().cursor()
+    inputData = (content['Movie_Title'], content['Year'], content['Name'], content['Age'],
+                 content['Gender'])
+    sql_insert_query = """INSERT INTO OscarWinners (Movie_Title,Year,Name,Age,Gender) VALUES (%s,%s,%s,%s,%s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
     return resp
 
 
 @app.route('/api/oscars/<int:oscar_id>', methods=['DELETE'])
 def api_delete(oscar_id) -> str:
+    cursor = mysql.get_db().cursor()
+    sql_delete_query = """DELETE FROM OscarWinners WHERE id = %s """
+    cursor.execute(sql_delete_query, oscar_id)
+    mysql.get_db().commit()
     resp = Response(status=210, mimetype='application/json')
     return resp
 
